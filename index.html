@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css">
+        <link rel="icon" href="ikona.png" type="image/png">
+        <title id="nazwa">Archiwum</title>
+    </head>
+    <body id="glowny-body" onload="wypelnij('witamy.html')">
+        <div id="naglowek">
+            <h1 id="archiwum">Archiwum języków europejskich</h1>
+                    <div id="menu">
+                        <button type="button" class="przycisk-menu" onclick="wypelnij('witamy.html')"><h3>Strona główna</h3></button>
+                        <button type="button" id="srodkowy" class="przycisk-menu" onclick="wypelnij('lista-jezykow.html')"><h3>Lista języków</h3></button>
+                        <button type="button" class="przycisk-menu" onclick="wypelnij('o-statusach.html')"><h3>Informacje</h3></button>
+                    </div>
+        </div>
+        <div id="stopka">
+            <h4 style="color: rgb(255, 255, 255); margin: 0px 20px 20px 20px;">Kamil Wojtas<br>27768, L3C2<br>Informatyka - stacjonarny<br>semestr I</h4>
+        </div>
+        <div id="kolumna">
+            <header>
+                <div class="placeholder"></div>
+            </header>
+        <!---------------------------------------------------------------->
+            <main id="podstrona">
+                
+
+            </main>
+        <!---------------------------------------------------------------->
+            <footer>
+                <div class="placeholder"></div>
+            </footer>
+        </div>
+
+        <script>
+            function wypelnij(strona)
+            {
+                fetch(strona)
+                .then(response => response.text())
+                .then(data =>
+                { 
+                    var nazwa_podstrony = znajdzT(data);
+                    document.getElementById('podstrona').innerHTML = data;
+                    document.getElementById('nazwa').innerText = nazwa_podstrony;
+                })
+                .catch(error => console.error('Nie znaleziono strony!',error));
+            }
+
+            function znajdzT(data)
+            {
+                var tytul = data.match(/<title>(.*?)<\/title>/i);
+                if (tytul)
+                {
+                    return tytul[1];
+                }
+                else
+                {
+                    return "Archiwum";
+                }
+            }
+        </script>
+
+
+
+    </body>
+</html>

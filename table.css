@@ -1,0 +1,35 @@
+table
+{
+    border: 1px solid #ddd;
+    margin: 40px auto;
+    padding: auto;
+    border-collapse: collapse;
+}
+
+th, td
+{
+    border: 1px solid #ddd;
+    padding: auto;
+    text-align: center;
+    height: 70px;
+    color: rgb(255, 255, 255);
+}
+
+th
+{
+    width: 150px;
+}
+
+td
+{
+    width: 300px;
+}
+
+body
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}

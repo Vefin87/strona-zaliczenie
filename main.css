@@ -43,7 +43,7 @@ a:hover
 
 .placeholder
 {
-    background-color: rgba(0, 127, 255, 0.5);
+    background-color: rgba(0, 127, 255, 0);
     height: 15vh;
 }
 
